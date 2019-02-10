@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px auto 90ch;
+    grid-template-areas: 
+        "topo topo"    /* querie geral */
+        "meio meio"
+        "baixo baixo"
+}
+
+.header-container {
+    grid-area: topo;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 
+        "left right"; /* sub grid do topo */
+       
+}
+/* Header left side */
+.leftz {
+    grid-area: left;
+    background: linear-gradient(
+          rgba(89, 53, 15, 0.7), 
+          rgba(0, 0, 0, 0.7)
+        ),url(imgs/matoi.png);
+    background-size: cover;
+    background-color: black;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 2px solid orange;
+}
+.logo-text {
+    color: #f3f3f3;
+    display: flex;
+    line-height: 1.3rem;
+    align-items: center;
+    
+}
+.japword {
+    align-self: center;
+    font-size: 3rem;
+    color: #ffb808;
+}
+.orange {
+    color: orange;
+}
+.pointrem {
+    font-size: .8rem;
+    text-align: center
+}
+/* menu responsive */
+.responsive-menu {
+    display: none;
+}
+.hidden-search {
+    padding: 1rem;
+    position: relative;
+    display: none; /* vai usar isso no querie */
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.fas {
+    color: white;
+}
+
+/* Header right side */
+
+.rightx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: right;
+    background: #f1f1f1;
+    border-bottom: 2px solid #ffc04c;
+}
+.rightx ul {
+    display: flex;
+    
+}
+.rightx a {
+    margin: .6rem;
+    color: black;
+    
+}
+
+/* Search bar */
+.search-form {
+    display: flex;
+    border: none;
+    padding: .5rem;
+}
+.search-form input[type="text"] {
+    padding: .2rem;
+    border: none; 
+}
+.search-form button[type="submit"] {
+    padding: .5rem;
+    border: none;
+    background: #e7c88f;
+    
+}
+/* Container meio */
+.mid-container {
+    grid-area: meio;
+    background: url(imgs/mako2.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #fff4e3;
+    display: flex;
+    
+
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50ch;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-family: 'Roboto Condensed';
+    font-weight: 600;
+}
+/* Formatações */
+.text-container h1, p, span {
+    padding: .25rem;
+}
+.padd {
+    padding: 2rem;
+}
+.back-preto {
+    font-size: 1.3rem;
+    display: inline;
+    background: black;
+}
+.call-text {
+    color: orange;
+}
+.sub-text {
+    display: inline;
+    background: rgba(87, 69, 69, 0.35);
+}
+/* Cards */
+.bottom-container {
+    grid-area: baixo;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    grid-template-areas: /* grid bottom */
+        "animecards minicards"
+}
+.animecards {
+    grid-area: animecards;
+    background: #fffcf5;
+    display: flex;
+    flex-direction: column;
+    
+}
+.uite {
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 20%;
+    padding: .5rem;
+    margin: 1rem;
+}
+.ul-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.ul-semico {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.active {
+    color: orange;
+    border-bottom: 2px orange solid;
+}
+
+.ul-semico a {
+    margin: .7rem;
+    padding: 0;
+    color: #393939;
+}
+.spacing {
+    color: gray;
+}
+/* BigCards */
+
+.cards {
+    font-family: 'Roboto Condensed';
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: .7rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.bigger {
+    font-size: 1.2rem;
+    color: #898989;
+}
+.smaller {
+    color: #4b4b4b;
+}
+.anime-card {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* MiniCards */
+
+.minicards {
+    grid-area: minicards;
+    background: #fffcf5;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-height: 70ch;
+}
+.mini-text {
+    display: flex;
+    font-size: 1vw;
+    justify-content: space-between;
+    margin: 1rem;
+    
+}
+.mini-card {
+    font-size: 1vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.borda {
+    border-bottom: 2px orange solid;
+}
+.minicard1 {
+   display: flex; 
+    align-content: center;
+    align-items: center;
+    line-height: .8rem;
+    margin: .5rem;
+}
+.minicard1 p {
+    
+}
+
+img:hover {
+    filter:brightness(115%);
+    transition: all .2s ease-in;
+}
+.airing {
+    display: none;
+}
+/* Queries */
+
+@media only screen and (max-width:860px) {
+    .header-container {
+        grid-template-areas: 
+            "left left";
+    }
+    .hidden-search {
+        display: flex;
+    }
+    .rightx {
+        display: none;
+    }
+    .leftz {
+        background-position: 50% 30%;
+    }
+    
+    .mid-container {
+        background-size: cover;
+        background-position: center;
+        justify-content: center;
+    }
+    .text-container {
+        font-size: 1.5rem;    
+    }
+    .minicards {
+        display: none;
+    }
+    .bottom-container {
+        grid-template-areas: 
+            "animecards animecards"
+    }
+    .cards {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .ul-container {
+        font-size: 3vw;
+    }
+}
+@media only screen and (max-width:360px) {
+    .ul-container {
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-size: 5vw;
+    }
+    .ul-semico {
+        display: none;
+    }
+    .airing {
+        display: block;
+        color: orange;
+        border-bottom: 2px orange solid;
+    }
+    .bottom-container {
+        margin: 0;
+    }
+    .mobil-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .leftz {
+        justify-content: center;
+    }
+    .header-container {
+        grid-template-columns: auto 1fr;
+}
+    .text-container {
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 100;
+    }
+}
